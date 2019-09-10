@@ -22,6 +22,15 @@ Use `vagrant up` to bring the virtual machine online and `vagrant ssh` to login.
 -  Now execute the Python file - `python logs_analysis.py`.
 
 
+##### Views for Question 2
+```sql
+CREATE VIEW article_authors AS
+SELECT title, name
+FROM articles, authors
+WHERE articles.author = authors.id;
+```
+
+
 
 
 

@@ -1,9 +1,9 @@
-#first project 
+# first_project
 import psycopg2
 
-Database_name="Amr_news"
+Database_name = "Amr_news"
 
-query_Q1= """select *,
+query_Q1 = """select *,
             from log, articles
             where log.status='200 OK'
             and articles.slug = substr(log.path, 10)
@@ -35,22 +35,20 @@ def query_db(Amr_news):
     conect_db.close()
     return resu
 
+    def title(title):
+    "print("("\n\t\t" + title + "\n")
 
 
-def title(title):
-    print ("\n\t\t" + title + "\n")
-
-
-# Print  articles 
+# Print_articles
 def articles(Amr_news):
     articles = query_db(query_Q1)
     print_title("Top 3 articles of all time")
-
     for title, num in articles:
         print(" \"{}\" -- {} views".format(title, num))
 
-
 # Print authors
+
+
 def authors():
     authors = query_db(Query_Q2)
     print_title("Top authors of all time")
